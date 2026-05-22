@@ -1,0 +1,14 @@
+*.php
+old/
+update/
+config/
+database.sql
+migrations/
+storage/
+examples/
+firebase-service-account*.json
+service-account*.json
+*.private.json
+*.secret.json
+.env
+.env.*

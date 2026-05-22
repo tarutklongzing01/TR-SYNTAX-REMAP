@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>จัดการแพ็กเกจ | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">แดชบอร์ดแอดมิน</a><a href="products.html">สินค้า</a><a class="active" href="packages.html">แพ็กเกจ</a><a href="orders.html">ออเดอร์</a><a href="hwid.html">HWID</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
+<main>
+    <section class="page-hero compact"><span class="eyebrow">Packages</span><h1>จัดการแพ็กเกจ</h1><p>ดูแลแพ็กเกจสิทธิ์ใช้งาน Starter, Pro และ Team</p></section>
+    <section class="section admin-grid">
+        <form class="panel form-stack" data-admin-package-form data-firebase-form><h2>เพิ่มแพ็กเกจใหม่</h2><label>ชื่อแพ็กเกจ<input type="text" name="title" required></label><label>ราคา<input type="number" name="price" step="0.01" min="0" required></label><label>รายละเอียด<textarea name="description" rows="3"></textarea></label><label>คุณสมบัติ แยกบรรทัด<textarea name="features" rows="7"></textarea></label><label class="check"><input type="checkbox" name="is_active" checked> เปิดขาย</label><button class="btn primary full" type="submit">บันทึกแพ็กเกจ</button></form>
+        <div class="panel"><h2>รายการแพ็กเกจ</h2><div class="table-wrap"><table><thead><tr><th>ชื่อ</th><th>ราคา</th><th>สถานะ</th><th></th></tr></thead><tbody data-admin-packages-list><tr><td>Starter License</td><td>฿4,900</td><td>เปิดขาย</td><td class="actions"><a class="btn small ghost" href="#">แก้ไข</a><button class="btn small danger" type="button">ลบ</button></td></tr><tr><td>Pro License</td><td>฿12,900</td><td>เปิดขาย</td><td class="actions"><a class="btn small ghost" href="#">แก้ไข</a><button class="btn small danger" type="button">ลบ</button></td></tr><tr><td>Team License</td><td>฿28,900</td><td>เปิดขาย</td><td class="actions"><a class="btn small ghost" href="#">แก้ไข</a><button class="btn small danger" type="button">ลบ</button></td></tr></tbody></table></div></div>
+    </section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>Admin Console with Firebase</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="../firebase-config.js"></script>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/firebase-app.js"></script>
+</body>
+</html>

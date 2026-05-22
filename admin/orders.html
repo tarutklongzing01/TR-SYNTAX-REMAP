@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>จัดการออเดอร์ | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">แดชบอร์ดแอดมิน</a><a href="products.html">สินค้า</a><a href="packages.html">แพ็กเกจ</a><a class="active" href="orders.html">ออเดอร์</a><a href="hwid.html">HWID</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
+<main>
+    <section class="page-hero compact"><span class="eyebrow">Orders</span><h1>จัดการออเดอร์</h1><p>ตรวจสลิป อนุมัติ ปฏิเสธ หรือปิดงานเมื่อส่งไฟล์เรียบร้อย</p></section>
+    <section class="section"><div class="order-list" data-admin-orders>
+        <article class="panel order-card admin-order"><div><span class="chip">#1002 แพ็กเกจ</span><h2>Pro License</h2><p>ลูกค้า: Demo User (user@example.com)</p><p>ยอด: <b>฿12,900</b> | สถานะ: <span class="status pending">รอตรวจสอบ</span></p><p>AnyDesk: 123 456 789 | โทร: 080-000-0000</p><p>หมายเหตุลูกค้า: ต้องการเปิดใช้งานช่วงเย็น</p><form class="status-form" data-static-form><select name="status"><option selected>รอตรวจสอบ</option><option>อนุมัติแล้ว</option><option>ปฏิเสธ</option><option>เสร็จสิ้น</option></select><input type="text" name="admin_note" placeholder="หมายเหตุแอดมิน"><button class="btn small primary" type="submit">บันทึก</button></form></div><img class="slip-thumb" src="../uploads/slips/slip_2_1778855715_63c971d6f1f0.png" alt="สลิปออเดอร์ 1002"></article>
+        <article class="panel order-card admin-order"><div><span class="chip">#1001 ไฟล์รีแมพ</span><h2>Honda Click 160 Stage 1 Street Map</h2><p>ลูกค้า: TR Customer (customer@example.com)</p><p>ยอด: <b>฿1,500</b> | สถานะ: <span class="status approved">อนุมัติแล้ว</span></p><p>AnyDesk: 987 654 321 | โทร: 081-111-1111</p><p>ไฟล์สินค้า: <a class="link" href="../uploads/files/sample-click160-stage1.bin" target="_blank">uploads/files/sample-click160-stage1.bin</a></p><form class="status-form" data-static-form><select name="status"><option>รอตรวจสอบ</option><option selected>อนุมัติแล้ว</option><option>ปฏิเสธ</option><option>เสร็จสิ้น</option></select><input type="text" name="admin_note" value="ส่งไฟล์แล้ว"><button class="btn small primary" type="submit">บันทึก</button></form></div><img class="slip-thumb" src="../uploads/slips/slip_2_1778855715_63c971d6f1f0.png" alt="สลิปออเดอร์ 1001"></article>
+    </div></section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>Admin Console with Firebase</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="../firebase-config.js"></script>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/firebase-app.js"></script>
+</body>
+</html>

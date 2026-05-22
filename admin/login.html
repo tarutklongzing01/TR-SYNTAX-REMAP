@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Login | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="../index.html">หน้าเว็บ</a><a class="btn small ghost active" href="login.html">Admin Login</a></div></nav></header>
+<main>
+    <section class="auth-wrap">
+        <form class="auth-card" data-firebase-admin-login data-firebase-form>
+            <span class="eyebrow">Admin Console</span>
+            <h1>เข้าสู่ระบบแอดมิน</h1>
+            <label>อีเมล<input type="email" name="email" value="admin@trsyntax.local" required></label>
+            <label>รหัสผ่าน<input type="password" name="password" required></label>
+            <button class="btn primary full" type="submit">เข้าสู่ระบบ</button>
+            <p class="muted">ต้องเพิ่ม UID ของแอดมินใน collection <code>admins</code> ก่อนเข้าใช้งาน</p>
+        </form>
+    </section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>Admin Console with Firebase</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="../firebase-config.js"></script>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/firebase-app.js"></script>
+</body>
+</html>

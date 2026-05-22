@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ร้านไฟล์รีแมพ | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">หน้าแรก</a><a class="active" href="shop.html">ไฟล์รีแมพ</a><a href="package.html">แพ็กเกจ</a><a class="btn small ghost" href="login.html">เข้าสู่ระบบ</a><a class="btn small primary" href="register.html">สมัครสมาชิก</a></div></nav></header>
+<main>
+    <section class="page-hero compact">
+        <span class="eyebrow">File Shop</span>
+        <h1>เลือกซื้อไฟล์รีแมพ</h1>
+        <p>ค้นหาไฟล์ตามแบรนด์ รุ่นรถ และ ECU Type ก่อนส่งออเดอร์ให้ทีมซัพพอร์ต</p>
+    </section>
+    <section class="section">
+        <form class="filter-bar" data-shop-filter>
+            <input type="text" name="brand" placeholder="แบรนด์ เช่น Honda">
+            <input type="text" name="model" placeholder="รุ่นรถ">
+            <input type="text" name="ecu_type" placeholder="ECU Type">
+            <button class="btn primary" type="submit">ค้นหา</button>
+            <button class="btn ghost" type="reset">ล้าง</button>
+        </form>
+        <div class="product-grid" data-products-list>
+            <article class="product-card" data-product-card data-brand="Honda" data-model="Click 160 / Vario 160" data-ecu="Keihin 38770-K2S"><div class="chip">Honda / Keihin 38770-K2S</div><h3>Honda Click 160 Stage 1 Street Map</h3><p><b>รุ่น:</b> Click 160 / Vario 160</p><p>ไฟล์ Stage 1 สำหรับใช้งานถนน เน้นคันเร่งติดมือและรอบกลางลื่นขึ้น</p><div class="card-foot"><strong>฿1,500</strong><a class="btn small primary" href="checkout.html?product_id=1">ซื้อไฟล์</a></div></article>
+            <article class="product-card" data-product-card data-brand="Yamaha" data-model="Aerox 155 / NMAX 155" data-ecu="Yamaha SGCU"><div class="chip">Yamaha / Yamaha SGCU</div><h3>Yamaha Aerox 155 Torque Map</h3><p><b>รุ่น:</b> Aerox 155 / NMAX 155</p><p>ปรับจุดจ่ายน้ำมันและองศาไฟสำหรับสายใช้งานจริง พร้อมรองรับท่อแต่ง</p><div class="card-foot"><strong>฿1,800</strong><a class="btn small primary" href="checkout.html?product_id=2">ซื้อไฟล์</a></div></article>
+            <article class="product-card" data-product-card data-brand="Kawasaki" data-model="Ninja 400 / Z400" data-ecu="Denso K-Line"><div class="chip">Kawasaki / Denso K-Line</div><h3>Kawasaki Ninja 400 Track Base</h3><p><b>รุ่น:</b> Ninja 400 / Z400</p><p>ไฟล์ฐานสำหรับสนาม ปลดข้อจำกัดบางส่วนและปรับ response ให้ต่อเนื่อง</p><div class="card-foot"><strong>฿3,200</strong><a class="btn small primary" href="checkout.html?product_id=3">ซื้อไฟล์</a></div></article>
+            <article class="product-card" data-product-card data-brand="GPX" data-model="Drone 150" data-ecu="Delphi MT05"><div class="chip">GPX / Delphi MT05</div><h3>GPX Drone 150 Eco Plus</h3><p><b>รุ่น:</b> Drone 150</p><p>ไฟล์ประหยัดน้ำมันพร้อมปรับความนุ่มของคันเร่งสำหรับขี่ประจำวัน</p><div class="card-foot"><strong>฿1,200</strong><a class="btn small primary" href="checkout.html?product_id=4">ซื้อไฟล์</a></div></article>
+            <p class="muted" data-shop-empty hidden>ไม่พบไฟล์ที่ตรงกับเงื่อนไข</p>
+        </div>
+    </section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>ECU Remap File & Tuning System สำหรับงานจูนและซัพพอร์ตทีมช่าง</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="site-data.js"></script>
+<script src="firebase-config.js"></script>
+<script src="assets/js/app.js"></script>
+<script type="module" src="assets/js/firebase-app.js"></script>
+</body>
+</html>

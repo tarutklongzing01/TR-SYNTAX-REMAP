@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="title desc">
+  <title id="title">Honda Flasher 2025 preview</title>
+  <desc id="desc">Dark ECU flasher software interface with red toolbar and TR racing mark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03050a"/>
+      <stop offset=".56" stop-color="#090d12"/>
+      <stop offset="1" stop-color="#020307"/>
+    </linearGradient>
+    <linearGradient id="redline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b0508"/>
+      <stop offset=".5" stop-color="#ff1744"/>
+      <stop offset="1" stop-color="#090d12"/>
+    </linearGradient>
+    <linearGradient id="tr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f7ff"/>
+      <stop offset=".45" stop-color="#cfd7e6"/>
+      <stop offset=".46" stop-color="#00a6ff"/>
+      <stop offset="1" stop-color="#002e96"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1 0 0 0 0 .1 0 0 0 0 .22 0 0 0 .85 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#1f2937" stroke-opacity=".45" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="480" fill="#f4f4f5"/>
+  <rect x="2" y="2" width="896" height="476" fill="url(#bg)" stroke="#f4f4f5" stroke-width="2"/>
+  <rect x="2" y="2" width="896" height="42" fill="#f8fafc"/>
+  <text x="32" y="28" font-family="Segoe UI, Tahoma, sans-serif" font-size="18" fill="#111827">HONDA FLASH TOOL | TR-SYNTAX</text>
+  <g fill="#111827">
+    <rect x="790" y="17" width="16" height="2"/>
+    <rect x="845" y="12" width="15" height="15" fill="none" stroke="#111827" stroke-width="1.5"/>
+    <path d="M877 12l15 15M892 12l-15 15" stroke="#111827" stroke-width="2"/>
+  </g>
+  <rect x="2" y="44" width="896" height="42" fill="#ff120d"/>
+  <g font-family="Prompt, Segoe UI, sans-serif" font-size="17" font-weight="600" fill="#05070d">
+    <text x="68" y="71">จัดการรถ</text>
+    <text x="170" y="71">ลูกค้า</text>
+    <text x="246" y="71">ปรับจูน</text>
+    <text x="337" y="71">ลบไวรัส</text>
+    <text x="444" y="71">Tuner Pro RT</text>
+    <text x="590" y="71">FIX AFR</text>
+    <text x="690" y="71">เพิ่มรหัสกล่อง</text>
+    <text x="812" y="71">DTC CODE</text>
+  </g>
+  <g transform="translate(20 61)" stroke="#05070d" stroke-width="3" fill="none">
+    <circle cx="0" cy="0" r="9"/>
+    <path d="M0-16v7M0 9v7M-16 0h7M9 0h7M-11-11l5 5M6 6l5 5M-11 11l5-5M6-6l5-5"/>
+  </g>
+  <rect x="2" y="86" width="896" height="392" fill="url(#grid)" opacity=".72"/>
+  <path d="M0 172h312l36-34h120l36-28h190l32-26h172" stroke="#14314c" stroke-width="2" fill="none"/>
+  <path d="M4 186h202l40-35h78" stroke="url(#redline)" stroke-width="2" fill="none"/>
+  <g filter="url(#glow)" opacity=".9">
+    <path d="M92 195c24-56 74-91 135-93 42-1 78 13 109 39" fill="none" stroke="#311016" stroke-width="18" opacity=".55"/>
+    <path d="M119 184c24-35 58-54 101-55" fill="none" stroke="#ff1744" stroke-width="5"/>
+    <circle cx="222" cy="132" r="3" fill="#ff1744"/>
+  </g>
+  <text x="104" y="150" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="46" fill="#fff" letter-spacing="1">HONDA FLASHER 2025</text>
+  <text x="650" y="148" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="104" fill="url(#tr)" transform="skewX(-15)">TR</text>
+  <path d="M635 161h210" stroke="#003b9b" stroke-width="5" opacity=".7"/>
+  <rect x="18" y="268" width="622" height="28" fill="#f8fafc" stroke="#d1d5db"/>
+  <line x1="331" y1="270" x2="331" y2="294" stroke="#111827" stroke-width="2"/>
+  <rect x="654" y="260" width="112" height="42" fill="#f8fafc" stroke="#111827" stroke-width="3"/>
+  <text x="680" y="288" font-family="Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#111827">BIN FILE</text>
+  <rect x="777" y="260" width="108" height="42" fill="#f8fafc" stroke="#d1d5db" stroke-width="3"/>
+  <text x="808" y="288" font-family="Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#a3a3a3">WRITE</text>
+  <text x="38" y="326" font-family="Segoe UI, sans-serif" font-size="17" fill="#fff">StartOffset :</text>
+  <rect x="138" y="305" width="100" height="30" fill="#f8fafc"/>
+  <text x="250" y="326" font-family="Segoe UI, sans-serif" font-size="17" fill="#fff">Checksum :</text>
+  <rect x="346" y="305" width="100" height="30" fill="#f8fafc"/>
+  <rect x="486" y="308" width="16" height="16" fill="#f8fafc"/>
+  <path d="M489 315l4 5 10-12" stroke="#6b7280" stroke-width="2" fill="none"/>
+  <text x="513" y="326" font-family="Segoe UI, sans-serif" font-size="16" fill="#fff">Fast Write</text>
+  <rect x="486" y="338" width="16" height="16" fill="#f8fafc"/>
+  <text x="513" y="356" font-family="Segoe UI, sans-serif" font-size="16" fill="#fff">Manual Offset</text>
+  <rect x="654" y="313" width="231" height="46" fill="#f8fafc" stroke="#d1d5db" stroke-width="3"/>
+  <text x="719" y="343" font-family="Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#b4b4b4">RESET FILE</text>
+  <rect x="16" y="376" width="870" height="22" fill="#e5e7eb"/>
+  <rect x="18" y="429" width="19" height="19" fill="none" stroke="#f8fafc"/>
+  <text x="53" y="449" font-family="Prompt, Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#fff">ไม่มีการเชื่อมต่อ !</text>
+  <text x="214" y="449" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#fff">COUNT :</text>
+  <text x="300" y="449" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#ff1744">-</text>
+  <text x="410" y="449" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#fff">ECM ID :</text>
+  <text x="505" y="449" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#ffff00">-</text>
+  <text x="652" y="449" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#fff">Binary File :</text>
+  <text x="776" y="449" font-family="Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#00ff75">-</text>
+</svg>

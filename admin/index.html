@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a class="active" href="index.html">แดชบอร์ดแอดมิน</a><a href="products.html">สินค้า</a><a href="packages.html">แพ็กเกจ</a><a href="orders.html">ออเดอร์</a><a href="hwid.html">HWID</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
+<main>
+    <section class="page-hero compact"><span class="eyebrow">Admin Console</span><h1>แดชบอร์ดผู้ดูแลระบบ</h1><p>ภาพรวมผู้ใช้ ออเดอร์ค้างตรวจ และยอดขายที่อนุมัติแล้ว</p></section>
+    <section class="section stats-grid"><article class="stat-card"><span>ผู้ใช้ทั้งหมด</span><b>24</b></article><article class="stat-card"><span>ออเดอร์ทั้งหมด</span><b>18</b></article><article class="stat-card"><span>รอตรวจสอบ</span><b>3</b></article><article class="stat-card"><span>ยอดขาย</span><b>฿62,400</b></article></section>
+    <section class="section"><div class="panel"><h2>ออเดอร์ล่าสุด</h2><div class="table-wrap"><table><thead><tr><th>เลขที่</th><th>ลูกค้า</th><th>รายการ</th><th>ยอด</th><th>สถานะ</th><th>วันที่</th></tr></thead><tbody><tr><td>#1002</td><td>Demo User</td><td>Pro License</td><td>฿12,900</td><td><span class="status pending">รอตรวจสอบ</span></td><td>2026-05-16</td></tr><tr><td>#1001</td><td>TR Customer</td><td>Honda Click 160 Stage 1 Street Map</td><td>฿1,500</td><td><span class="status approved">อนุมัติแล้ว</span></td><td>2026-05-15</td></tr></tbody></table></div></div></section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>Admin Console with Firebase</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="../firebase-config.js"></script>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/firebase-app.js"></script>
+</body>
+</html>

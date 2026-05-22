@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>จัดการสินค้า | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">แดชบอร์ดแอดมิน</a><a class="active" href="products.html">สินค้า</a><a href="packages.html">แพ็กเกจ</a><a href="orders.html">ออเดอร์</a><a href="hwid.html">HWID</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
+<main>
+    <section class="page-hero compact"><span class="eyebrow">Products</span><h1>จัดการไฟล์รีแมพ</h1><p>เพิ่ม แก้ไข ลบ และเปิดปิดสถานะสินค้าในร้านไฟล์</p></section>
+    <section class="section admin-grid">
+        <form class="panel form-stack" data-admin-product-form data-firebase-form><h2>เพิ่มสินค้าใหม่</h2><label>ชื่อไฟล์<input type="text" name="title" required></label><label>แบรนด์<input type="text" name="brand" required></label><label>รุ่นรถ<input type="text" name="model" required></label><label>ECU Type<input type="text" name="ecu_type" required></label><label>ราคา<input type="number" name="price" step="0.01" min="0" required></label><label>รายละเอียด<textarea name="description" rows="4"></textarea></label><label>File URL / path<input type="text" name="file_path"></label><label>อัปโหลดไฟล์<input type="file" name="file_upload"></label><label class="check"><input type="checkbox" name="is_active" checked> เปิดขาย</label><button class="btn primary full" type="submit">บันทึกสินค้า</button></form>
+        <div class="panel"><h2>รายการสินค้า</h2><div class="table-wrap"><table><thead><tr><th>ชื่อ</th><th>รุ่น</th><th>ราคา</th><th>สถานะ</th><th></th></tr></thead><tbody data-admin-products-list><tr><td>Honda Click 160 Stage 1 Street Map<br><span class="muted">Honda / Keihin 38770-K2S</span></td><td>Click 160 / Vario 160</td><td>฿1,500</td><td>เปิดขาย</td><td class="actions"><a class="btn small ghost" href="#">แก้ไข</a><button class="btn small danger" type="button">ลบ</button></td></tr><tr><td>Yamaha Aerox 155 Torque Map<br><span class="muted">Yamaha / Yamaha SGCU</span></td><td>Aerox 155 / NMAX 155</td><td>฿1,800</td><td>เปิดขาย</td><td class="actions"><a class="btn small ghost" href="#">แก้ไข</a><button class="btn small danger" type="button">ลบ</button></td></tr><tr><td>Kawasaki Ninja 400 Track Base<br><span class="muted">Kawasaki / Denso K-Line</span></td><td>Ninja 400 / Z400</td><td>฿3,200</td><td>เปิดขาย</td><td class="actions"><a class="btn small ghost" href="#">แก้ไข</a><button class="btn small danger" type="button">ลบ</button></td></tr></tbody></table></div></div>
+    </section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>Admin Console with Firebase</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="../firebase-config.js"></script>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/firebase-app.js"></script>
+</body>
+</html>
