@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ชำระเงิน | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">หน้าแรก</a><a href="shop.html">ไฟล์รีแมพ</a><a href="package.html">แพ็กเกจ</a><a class="btn small ghost" href="login.html">เข้าสู่ระบบ</a><a class="btn small primary" href="register.html">สมัครสมาชิก</a></div></nav></header>
+<main data-static-checkout>
+    <section class="page-hero compact">
+        <span class="eyebrow">Checkout</span>
+        <h1>ยืนยันคำสั่งซื้อ</h1>
+        <p>โอนเงินและแนบสลิปเพื่อให้ทีมงานตรวจสอบสถานะ</p>
+    </section>
+    <section class="section checkout-grid">
+        <div class="panel">
+            <h2>สรุปรายการ</h2>
+            <p><b>รายการ:</b> <span data-checkout-title>กรุณาเลือกสินค้าหรือแพ็กเกจจากหน้าร้าน</span></p>
+            <p data-checkout-description>หน้านี้เป็น HTML static สำหรับ deploy บน Vercel</p>
+            <div class="price" data-checkout-price>฿0</div>
+            <div class="bank-box">
+                <b>ข้อมูลโอนเงิน</b>
+                <p>ธนาคาร: TR-SYNTAX BANK</p>
+                <p>เลขบัญชี: 000-0-00000-0</p>
+                <p>ชื่อบัญชี: TR-SYNTAX REMAP</p>
+            </div>
+        </div>
+        <form class="panel form-stack" data-checkout-form data-firebase-form>
+            <input type="hidden" name="product_id" data-product-id>
+            <input type="hidden" name="package_id" data-package-id>
+            <h2>ข้อมูลสำหรับซัพพอร์ต</h2>
+            <label>AnyDesk ID<input type="text" name="anydesk_id" required></label>
+            <label>เบอร์โทรศัพท์<input type="tel" name="phone" required></label>
+            <label>หมายเหตุ<textarea name="note" rows="4" placeholder="รุ่นรถ รายละเอียดงาน หรือเวลาที่สะดวก"></textarea></label>
+            <label>แนบสลิปโอนเงิน JPG/PNG ไม่เกิน 5MB<input type="file" name="slip" accept=".jpg,.jpeg,.png,image/jpeg,image/png" required></label>
+            <button class="btn primary full" type="submit">ส่งออเดอร์</button>
+        </form>
+    </section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>ECU Remap File & Tuning System สำหรับงานจูนและซัพพอร์ตทีมช่าง</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="site-data.js"></script>
+<script src="firebase-config.js"></script>
+<script src="assets/js/app.js"></script>
+<script type="module" src="assets/js/firebase-app.js"></script>
+</body>
+</html>
