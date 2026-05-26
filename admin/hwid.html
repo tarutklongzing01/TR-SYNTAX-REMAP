@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css?v=20260522">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260526">
 </head>
 <body>
-<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">แดชบอร์ดแอดมิน</a><a href="products.html">สินค้า</a><a href="packages.html">แพ็กเกจ</a><a href="orders.html">ออเดอร์</a><a class="active" href="hwid.html">HWID</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">แดชบอร์ดแอดมิน</a><a href="products.html">สินค้า</a><a href="packages.html">แพ็กเกจ</a><a href="orders.html">ออเดอร์</a><a class="active" href="hwid.html">HWID</a><a href="license-key.html">สร้างคีย์</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
 <main class="hwid-console">
     <section class="page-hero compact hwid-hero">
         <span class="eyebrow">HWID Lock</span>
@@ -35,7 +35,11 @@
             </div>
 
             <label>License Key
-                <input type="text" name="license_key" placeholder="เว้นว่างเพื่อสุ่มคีย์">
+                <div class="license-key-row">
+                    <input type="text" name="license_key" placeholder="กดสร้างคีย์ หรือเว้นว่างเพื่อสุ่มตอนบันทึก" data-license-key-input>
+                    <button class="btn small outline" type="button" data-generate-license-key>สร้างคีย์</button>
+                    <button class="btn small ghost" type="button" data-copy-generated-license>คัดลอก</button>
+                </div>
             </label>
 
             <div class="form-two">
@@ -94,7 +98,7 @@
 <footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>Admin Console with Firebase</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
 <script src="../firebase-config.js"></script>
 <script src="../assets/js/app.js?v=20260522"></script>
-<script type="module" src="../assets/js/firebase-app.js?v=20260522"></script>
+<script type="module" src="../assets/js/firebase-app.js?v=20260526-2"></script>
 </body>
 </html>
 

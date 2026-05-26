@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>สร้าง License Key | TR-SYNTAX REMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260526">
+</head>
+<body>
+<header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">แดชบอร์ดแอดมิน</a><a href="products.html">สินค้า</a><a href="packages.html">แพ็กเกจ</a><a href="orders.html">ออเดอร์</a><a href="hwid.html">HWID</a><a class="active" href="license-key.html">สร้างคีย์</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
+<main class="license-console">
+    <section class="page-hero compact license-hero">
+        <span class="eyebrow">License Mint</span>
+        <h1>สร้าง License Key</h1>
+        <p>ออกคีย์ใหม่ให้ลูกค้า บันทึกลง Firestore collection <code>hwidLicenses</code> และพร้อมให้โปรแกรมผูก HWID เมื่อเปิดใช้งานครั้งแรก</p>
+    </section>
+
+    <section class="section license-builder">
+        <form class="panel form-stack license-create-card" data-admin-hwid-form data-firebase-form>
+            <div class="panel-heading compact-heading">
+                <div>
+                    <span class="eyebrow">Create</span>
+                    <h2>ข้อมูลไลเซนส์</h2>
+                </div>
+                <button class="btn small outline" type="button" data-generate-license-key>สุ่มคีย์</button>
+            </div>
+
+            <label>License Key
+                <div class="license-key-row">
+                    <input type="text" name="license_key" placeholder="กดสุ่ม หรือเว้นว่างเพื่อสร้างอัตโนมัติ" autocomplete="off" data-license-key-input>
+                    <button class="btn small ghost" type="button" data-copy-generated-license>คัดลอก</button>
+                </div>
+            </label>
+
+            <div class="form-two">
+                <label>ชื่อลูกค้า
+                    <input type="text" name="customer_name" required placeholder="เช่น คุณเอก TR">
+                </label>
+                <label>อีเมลลูกค้า
+                    <input type="email" name="customer_email" placeholder="customer@email.com">
+                </label>
+            </div>
+
+            <div class="form-two">
+                <label>ชื่อโปรแกรม
+                    <input type="text" name="app_name" value="TR-SYNTAX Tool" required>
+                </label>
+                <label>สถานะ
+                    <select name="status">
+                        <option value="active">เปิดใช้งาน</option>
+                        <option value="disabled">ปิดใช้งาน</option>
+                        <option value="expired">หมดอายุ</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="form-two">
+                <label>วันหมดอายุ
+                    <input type="datetime-local" name="expires_at">
+                </label>
+                <label>ผูก HWID เอง
+                    <input type="text" name="manual_hwid" placeholder="เว้นว่างเพื่อให้ผูกเครื่องแรก">
+                </label>
+            </div>
+
+            <label>บันทึกภายใน
+                <textarea name="notes" rows="4" placeholder="หมายเหตุสำหรับทีมแอดมิน"></textarea>
+            </label>
+
+            <button class="btn primary full" type="submit">บันทึกและสร้างคีย์</button>
+        </form>
+
+        <aside class="license-side">
+            <section class="panel license-preview">
+                <span class="eyebrow">Ready Key</span>
+                <code data-license-preview>TRSYN-XXXX-XXXX</code>
+                <p>คีย์ที่แสดงจะเป็น Document ID ใน Firestore และเป็นรหัสที่ลูกค้านำไปกรอกในโปรแกรม</p>
+            </section>
+
+            <section class="panel license-result" data-license-result hidden>
+                <span class="eyebrow">Created</span>
+                <h2>สร้างคีย์สำเร็จ</h2>
+                <code data-created-license-key></code>
+                <button class="btn small primary" type="button" data-copy-created-license>คัดลอกคีย์</button>
+            </section>
+
+            <section class="panel license-notes">
+                <span class="eyebrow">Flow</span>
+                <ol>
+                    <li>สร้างคีย์ให้ลูกค้าในหน้านี้</li>
+                    <li>ลูกค้านำคีย์ไปกรอกในโปรแกรม</li>
+                    <li>ระบบจะผูก HWID เครื่องแรกอัตโนมัติ</li>
+                </ol>
+            </section>
+        </aside>
+    </section>
+</main>
+<footer class="footer"><div><strong>TR-SYNTAX REMAP</strong><p>Admin Console with Firebase</p></div><div class="footer-meta">© 2026 TR-SYNTAX REMAP</div></footer>
+<script src="../firebase-config.js"></script>
+<script src="../assets/js/app.js?v=20260522"></script>
+<script type="module" src="../assets/js/firebase-app.js?v=20260526-3"></script>
+</body>
+</html>

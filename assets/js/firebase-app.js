@@ -117,6 +117,31 @@ async function isAdmin(uid) {
   return adminSnap.exists();
 }
 
+function setHwidStats(total = 0, active = 0, bound = 0, disabled = 0) {
+  const totalNode = $("[data-hwid-total]");
+  const activeNode = $("[data-hwid-active]");
+  const boundNode = $("[data-hwid-bound]");
+  const disabledNode = $("[data-hwid-disabled]");
+  if (totalNode) totalNode.textContent = String(total);
+  if (activeNode) activeNode.textContent = String(active);
+  if (boundNode) boundNode.textContent = String(bound);
+  if (disabledNode) disabledNode.textContent = String(disabled);
+}
+
+function setHwidTableMessage(message, type = "muted") {
+  const hwidRows = $("[data-admin-hwid-list]");
+  if (!hwidRows) return;
+  hwidRows.innerHTML = `<tr><td colspan="5" class="${h(type)}">${h(message)}</td></tr>`;
+}
+
+function generateLicenseKey() {
+  const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  const bytes = new Uint8Array(12);
+  crypto.getRandomValues(bytes);
+  const chars = Array.from(bytes, (byte) => alphabet[byte % alphabet.length]);
+  return `TRSYN-${chars.slice(0, 4).join("")}-${chars.slice(4, 8).join("")}-${chars.slice(8, 12).join("")}`;
+}
+
 async function loadCollection(name, fallbackItems = []) {
   if (!isConfigured) return fallbackItems;
   const snap = await getDocs(collection(db, name));
@@ -401,11 +426,58 @@ function initAdminForms() {
 
   const hwidForm = $("[data-admin-hwid-form]");
   if (hwidForm) {
+    const licenseInput = $("[data-license-key-input]", hwidForm);
+    const generateButton = $("[data-generate-license-key]", hwidForm);
+    const copyButton = $("[data-copy-generated-license]", hwidForm);
+    const previewNode = $("[data-license-preview]");
+    const resultPanel = $("[data-license-result]");
+    const createdKeyNode = $("[data-created-license-key]");
+    const copyCreatedButton = $("[data-copy-created-license]");
+
+    const setLicenseKey = (key) => {
+      const safeKey = String(key || "").trim().toUpperCase();
+      if (licenseInput) {
+        licenseInput.value = safeKey;
+      }
+      if (previewNode) {
+        previewNode.textContent = safeKey || "TRSYN-XXXX-XXXX-XXXX";
+      }
+      return safeKey;
+    };
+
+    generateButton?.addEventListener("click", () => {
+      if (!licenseInput) return;
+      setLicenseKey(generateLicenseKey());
+      licenseInput.focus();
+      licenseInput.select();
+      notice("สร้าง License Key แล้ว");
+    });
+
+    licenseInput?.addEventListener("input", () => {
+      setLicenseKey(licenseInput.value);
+    });
+
+    copyButton?.addEventListener("click", async () => {
+      if (!licenseInput) return;
+      if (!licenseInput.value.trim()) {
+        setLicenseKey(generateLicenseKey());
+      }
+      await navigator.clipboard.writeText(licenseInput.value.trim());
+      notice("คัดลอก License Key แล้ว");
+    });
+
+    copyCreatedButton?.addEventListener("click", async () => {
+      const key = createdKeyNode?.textContent?.trim() || "";
+      if (!key) return;
+      await navigator.clipboard.writeText(key);
+      notice("คัดลอก License Key แล้ว");
+    });
+
     hwidForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!requireFirebase()) return;
       const form = new FormData(hwidForm);
-      const key = String(form.get("license_key") || `TRSYN-${crypto.randomUUID().slice(0, 8).toUpperCase()}`);
+      const key = String(form.get("license_key") || generateLicenseKey()).trim().toUpperCase();
       try {
         await setDoc(doc(db, "hwidLicenses", key), {
           licenseKey: key,
@@ -419,7 +491,14 @@ function initAdminForms() {
           createdAt: serverTimestamp()
         });
         notice("บันทึกไลเซนส์ HWID เข้า Firestore แล้ว");
+        if (createdKeyNode) {
+          createdKeyNode.textContent = key;
+        }
+        if (resultPanel) {
+          resultPanel.hidden = false;
+        }
         hwidForm.reset();
+        setLicenseKey("");
         await renderAdminViews();
       } catch (error) {
         notice(getErrorMessage(error), "error");
@@ -489,19 +568,21 @@ async function renderAdminViews() {
 
   const hwidRows = $("[data-admin-hwid-list]");
   if (hwidRows) {
-    const snap = await getDocs(collection(db, "hwidLicenses"));
+    let snap;
+    try {
+      snap = await getDocs(collection(db, "hwidLicenses"));
+    } catch (error) {
+      console.error("Failed to load hwidLicenses", error);
+      setHwidStats();
+      setHwidTableMessage(getErrorMessage(error), "muted");
+      notice(getErrorMessage(error), "error");
+      return;
+    }
     const licenses = snap.docs.map((item) => ({ id: item.id, ...item.data() }));
     const active = licenses.filter((license) => (license.status || "active") === "active").length;
     const bound = licenses.filter((license) => license.manualHwid || license.hwidFingerprint || license.hwidHash).length;
     const disabled = licenses.filter((license) => ["disabled", "expired"].includes(license.status)).length;
-    const totalNode = $("[data-hwid-total]");
-    const activeNode = $("[data-hwid-active]");
-    const boundNode = $("[data-hwid-bound]");
-    const disabledNode = $("[data-hwid-disabled]");
-    if (totalNode) totalNode.textContent = String(licenses.length);
-    if (activeNode) activeNode.textContent = String(active);
-    if (boundNode) boundNode.textContent = String(bound);
-    if (disabledNode) disabledNode.textContent = String(disabled);
+    setHwidStats(licenses.length, active, bound, disabled);
 
     hwidRows.innerHTML = licenses.map((license) => {
       const key = license.licenseKey || license.id;
@@ -582,11 +663,29 @@ function initAdminGuard() {
       window.location.href = "login.html";
       return;
     }
-    if (!(await isAdmin(user.uid))) {
+    let hasAdminAccess = false;
+    try {
+      hasAdminAccess = await isAdmin(user.uid);
+    } catch (error) {
+      console.error("Failed to check admin access", error);
+      setHwidStats();
+      setHwidTableMessage(getErrorMessage(error), "muted");
+      notice(getErrorMessage(error), "error");
+      return;
+    }
+    if (!hasAdminAccess) {
+      setHwidStats();
+      setHwidTableMessage(`บัญชีนี้ยังไม่ได้รับสิทธิ์แอดมิน ให้สร้าง document ใน collection admins ด้วย ID: ${user.uid}`, "muted");
       notice("บัญชีนี้ยังไม่ได้รับสิทธิ์แอดมิน", "error");
       return;
     }
-    await renderAdminViews();
+    try {
+      await renderAdminViews();
+    } catch (error) {
+      console.error("Failed to render admin views", error);
+      setHwidTableMessage(getErrorMessage(error), "muted");
+      notice(getErrorMessage(error), "error");
+    }
   });
 }
 

@@ -704,6 +704,79 @@ th {
     margin-bottom: 2px;
 }
 
+.license-key-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 8px;
+    align-items: center;
+}
+
+.license-key-row input {
+    min-width: 0;
+    font-family: "Consolas", "Courier New", monospace;
+    letter-spacing: 0;
+}
+
+.license-key-row .btn {
+    min-height: 42px;
+    white-space: nowrap;
+}
+
+.license-builder {
+    display: grid;
+    grid-template-columns: minmax(360px, 1fr) minmax(280px, 360px);
+    gap: 18px;
+    align-items: start;
+}
+
+.license-side {
+    display: grid;
+    gap: 18px;
+    position: sticky;
+    top: 96px;
+}
+
+.license-input-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    align-items: center;
+}
+
+.license-input-row input {
+    min-width: 0;
+    font-family: "Consolas", "Courier New", monospace;
+    letter-spacing: 0;
+}
+
+.license-input-row .btn {
+    min-height: 42px;
+    white-space: nowrap;
+}
+
+.license-preview code,
+.license-result code {
+    display: block;
+    margin: 12px 0;
+    padding: 14px;
+    border: 1px solid rgba(0, 229, 255, 0.24);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.26);
+    color: #e0faff;
+    font-size: 1rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.license-notes ol {
+    margin: 12px 0 0 20px;
+    color: var(--muted);
+}
+
+.license-notes li {
+    margin: 8px 0;
+}
+
 .api-pill {
     display: inline-flex;
     align-items: center;
@@ -852,6 +925,7 @@ th {
     .dashboard-grid,
     .checkout-grid,
     .admin-grid,
+    .license-builder,
     .hwid-workspace {
         grid-template-columns: 1fr;
     }
@@ -870,6 +944,18 @@ th {
 
     .filter-bar {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .license-key-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .license-key-row input {
+        grid-column: 1 / -1;
+    }
+
+    .license-side {
+        position: static;
     }
 
     .hwid-form {
@@ -907,8 +993,14 @@ th {
     .card-grid,
     .stats-grid,
     .filter-bar,
+    .license-key-row,
+    .license-input-row,
     .form-two {
         grid-template-columns: 1fr;
+    }
+
+    .license-key-row input {
+        grid-column: auto;
     }
 
     .timeline > div,
