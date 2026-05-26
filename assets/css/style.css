@@ -675,7 +675,7 @@ th {
 }
 
 .admin-compact-page .hwid-workspace {
-    width: min(1060px, calc(100% - 32px));
+    width: min(1060px, calc(100% - 40px));
     height: calc(100vh - 100px);
     padding-top: 18px;
 }
@@ -699,9 +699,21 @@ th {
 .admin-compact-page .hwid-form input,
 .admin-compact-page .hwid-form textarea,
 .admin-compact-page .hwid-form select {
+    min-width: 0;
+    max-width: 100%;
     min-height: 40px;
     padding: 9px 11px;
     font-size: 0.9rem;
+}
+
+.admin-compact-page .hwid-form .form-two > label {
+    min-width: 0;
+}
+
+.admin-compact-page .hwid-form input[type="datetime-local"] {
+    font-size: 0.78rem;
+    padding-left: 9px;
+    padding-right: 7px;
 }
 
 .admin-compact-page .hwid-form textarea {
@@ -884,26 +896,29 @@ th {
 .admin-compact-page .hwid-table th,
 .admin-compact-page .hwid-table td {
     padding: 10px 8px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .admin-compact-page .hwid-table th:nth-child(1),
 .admin-compact-page .hwid-table td:nth-child(1) {
-    width: 35%;
+    width: 31%;
 }
 
 .admin-compact-page .hwid-table th:nth-child(2),
 .admin-compact-page .hwid-table td:nth-child(2) {
-    width: 25%;
+    width: 24%;
 }
 
 .admin-compact-page .hwid-table th:nth-child(3),
 .admin-compact-page .hwid-table td:nth-child(3) {
-    width: 18%;
+    width: 24%;
 }
 
 .admin-compact-page .hwid-table th:nth-child(4),
 .admin-compact-page .hwid-table td:nth-child(4) {
-    width: 22%;
+    width: 21%;
 }
 
 .admin-compact-page .hwid-table th:nth-child(5),
@@ -948,6 +963,18 @@ th {
 
 .admin-compact-page .license-code {
     font-size: 0.68rem;
+}
+
+.admin-compact-page .chip,
+.admin-compact-page .status {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.25;
+}
+
+.admin-compact-page .hwid-table .chip {
+    padding: 3px 8px;
+    font-size: 0.72rem;
 }
 
 .license-meta {
