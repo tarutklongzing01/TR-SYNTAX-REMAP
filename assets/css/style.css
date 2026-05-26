@@ -660,6 +660,66 @@ th {
     max-width: 760px;
 }
 
+.admin-compact-page {
+    overflow: hidden;
+}
+
+.admin-compact-page .footer,
+.admin-compact-page .hwid-hero,
+.admin-compact-page .hwid-stats {
+    display: none;
+}
+
+.admin-compact-page main {
+    min-height: calc(100vh - 76px);
+}
+
+.admin-compact-page .hwid-workspace {
+    width: min(1060px, calc(100% - 32px));
+    height: calc(100vh - 100px);
+    padding-top: 18px;
+}
+
+.admin-compact-page .panel {
+    padding: 18px;
+}
+
+.admin-compact-page .hwid-form {
+    top: 94px;
+    max-height: calc(100vh - 118px);
+    gap: 10px;
+    overflow: hidden;
+}
+
+.admin-compact-page .hwid-form label {
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.admin-compact-page .hwid-form input,
+.admin-compact-page .hwid-form textarea,
+.admin-compact-page .hwid-form select {
+    min-height: 40px;
+    padding: 9px 11px;
+    font-size: 0.9rem;
+}
+
+.admin-compact-page .hwid-form textarea {
+    min-height: 54px;
+}
+
+.admin-compact-page .hwid-form .btn.full {
+    min-height: 40px;
+}
+
+.admin-compact-page .panel-heading {
+    margin-bottom: 12px;
+}
+
+.admin-compact-page .panel-heading h2 {
+    font-size: 1.25rem;
+}
+
 .hwid-stats {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     padding-bottom: 10px;
@@ -720,6 +780,17 @@ th {
 .license-key-row .btn {
     min-height: 42px;
     white-space: nowrap;
+}
+
+.admin-compact-page .license-key-row {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 7px;
+}
+
+.admin-compact-page .license-key-row .btn {
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 0.86rem;
 }
 
 .license-builder {
@@ -789,9 +860,55 @@ th {
     white-space: nowrap;
 }
 
+.admin-compact-page .api-pill {
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 0.8rem;
+}
+
 .hwid-table {
     min-width: 860px;
     table-layout: fixed;
+}
+
+.admin-compact-page .table-wrap {
+    overflow-x: hidden;
+}
+
+.admin-compact-page .hwid-table {
+    min-width: 0;
+    width: 100%;
+    font-size: 0.82rem;
+}
+
+.admin-compact-page .hwid-table th,
+.admin-compact-page .hwid-table td {
+    padding: 10px 8px;
+}
+
+.admin-compact-page .hwid-table th:nth-child(1),
+.admin-compact-page .hwid-table td:nth-child(1) {
+    width: 35%;
+}
+
+.admin-compact-page .hwid-table th:nth-child(2),
+.admin-compact-page .hwid-table td:nth-child(2) {
+    width: 25%;
+}
+
+.admin-compact-page .hwid-table th:nth-child(3),
+.admin-compact-page .hwid-table td:nth-child(3) {
+    width: 18%;
+}
+
+.admin-compact-page .hwid-table th:nth-child(4),
+.admin-compact-page .hwid-table td:nth-child(4) {
+    width: 22%;
+}
+
+.admin-compact-page .hwid-table th:nth-child(5),
+.admin-compact-page .hwid-table td:nth-child(5) {
+    display: none;
 }
 
 .hwid-table th:nth-child(1),
@@ -829,6 +946,10 @@ th {
     word-break: break-word;
 }
 
+.admin-compact-page .license-code {
+    font-size: 0.68rem;
+}
+
 .license-meta {
     display: flex;
     gap: 8px;
@@ -856,6 +977,10 @@ th {
     color: var(--muted);
     font-size: 0.82rem;
     line-height: 1.45;
+}
+
+.admin-compact-page .hwid-expiry {
+    font-size: 0.72rem;
 }
 
 .hwid-license-panel {
@@ -898,6 +1023,41 @@ th {
 }
 
 @media (max-width: 920px) {
+    .admin-compact-page {
+        overflow: auto;
+    }
+
+    .admin-compact-page .hwid-hero,
+    .admin-compact-page .hwid-stats {
+        display: grid;
+    }
+
+    .admin-compact-page .footer {
+        display: flex;
+    }
+
+    .admin-compact-page .hwid-workspace {
+        height: auto;
+    }
+
+    .admin-compact-page .hwid-form {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .admin-compact-page .table-wrap {
+        overflow-x: auto;
+    }
+
+    .admin-compact-page .hwid-table {
+        min-width: 760px;
+    }
+
+    .admin-compact-page .hwid-table th:nth-child(5),
+    .admin-compact-page .hwid-table td:nth-child(5) {
+        display: table-cell;
+    }
+
     .nav-toggle {
         display: inline-grid;
         place-items: center;

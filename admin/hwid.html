@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css?v=20260526">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260526-2">
 </head>
-<body>
+<body class="admin-compact-page">
 <header class="site-header"><nav class="nav-shell"><a class="brand" href="../index.html"><span>TR-SYNTAX</span> REMAP</a><button class="nav-toggle" type="button" data-nav-toggle aria-label="เปิดเมนู">☰</button><div class="nav-links" data-nav-menu><a href="index.html">แดชบอร์ดแอดมิน</a><a href="products.html">สินค้า</a><a href="packages.html">แพ็กเกจ</a><a href="orders.html">ออเดอร์</a><a class="active" href="hwid.html">HWID</a><a href="license-key.html">สร้างคีย์</a><a class="btn small danger" href="login.html" data-firebase-logout>ออกจากระบบ</a></div></nav></header>
 <main class="hwid-console">
     <section class="page-hero compact hwid-hero">
@@ -64,14 +64,16 @@
                 </label>
             </div>
 
-            <label>วันหมดอายุ
-                <input type="datetime-local" name="expires_at">
-            </label>
-            <label>ผูก HWID เอง
-                <input type="text" name="manual_hwid" placeholder="เว้นว่างเพื่อให้โปรแกรมผูกเครื่องแรก">
-            </label>
+            <div class="form-two">
+                <label>วันหมดอายุ
+                    <input type="datetime-local" name="expires_at">
+                </label>
+                <label>ผูก HWID เอง
+                    <input type="text" name="manual_hwid" placeholder="เว้นว่างเพื่อให้ผูกเครื่องแรก">
+                </label>
+            </div>
             <label>บันทึกภายใน
-                <textarea name="notes" rows="3" placeholder="หมายเหตุสำหรับทีมแอดมิน"></textarea>
+                <textarea name="notes" rows="2" placeholder="หมายเหตุสำหรับทีมแอดมิน"></textarea>
             </label>
             <button class="btn primary full" type="submit">บันทึกไลเซนส์</button>
         </form>
